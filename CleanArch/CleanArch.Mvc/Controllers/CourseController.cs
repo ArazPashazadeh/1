@@ -1,5 +1,7 @@
-﻿using CleanArch.Application.Interfaces;
+﻿using System;
+using CleanArch.Application.Interfaces;
 using CleanArch.Application.ViewModels;
+using CleanArch.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArch.Mvc.Controllers
@@ -17,6 +19,13 @@ namespace CleanArch.Mvc.Controllers
         {
             CourseViewModel model = _courseService.GetCourses();
             return View(model);
+        }
+
+        public IActionResult ShowCourse(Guid id)
+        {
+            Course course = _courseService.GetCourseById(id);
+            if (course == null) return NotFound();
+            return View(course);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CleanArch.Domain.Models;
 
 namespace CleanArch.Domain.Interfaces
@@ -6,5 +7,7 @@ namespace CleanArch.Domain.Interfaces
     public interface ICourseRepository
     {
         IEnumerable<Course> GetCourses();
+
+        Course GetCourseById(Guid courseId);
     }
 }
