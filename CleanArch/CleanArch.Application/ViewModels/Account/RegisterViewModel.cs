@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CleanArch.Application.ViewModels
+namespace CleanArch.Application.ViewModels.User
 {
     public class RegisterViewModel
     {

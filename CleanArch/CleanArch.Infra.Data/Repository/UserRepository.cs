@@ -14,6 +14,11 @@ namespace CleanArch.Infra.Data.Repository
             _context = context;
         }
 
+        public bool IsExistUser(string email, string password)
+        {
+            return _context.Users.Any(current => current.Email == email && current.Password == password);
+        }
+
         public void AddUser(User user)
         {
             _context.Add(user);
